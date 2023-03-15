@@ -1,7 +1,12 @@
+import Header from './components/Header';
 import './App.css';
 
 function App() {
-  return <div className="font-bold text-3xl">youtube</div>;
+  return (
+    <div className="p-2">
+      <Header />
+    </div>
+  );
 }
 
 export default App;
