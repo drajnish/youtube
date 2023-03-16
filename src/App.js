@@ -1,11 +1,17 @@
 import Header from './components/Header';
+import Body from './components/Body';
+import { Provider } from 'react-redux';
 import './App.css';
+import store from './utils/store';
 
 function App() {
   return (
-    <div className="p-2">
-      <Header />
-    </div>
+    <Provider store={store}>
+      <div className="font-Roboto">
+        <Header />
+        <Body />
+      </div>
+    </Provider>
   );
 }
 

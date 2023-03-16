@@ -3,13 +3,25 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { FaUserCircle } from 'react-icons/fa';
 import { TfiSearch } from 'react-icons/tfi';
 import Logo from '../assets/img/Logo.webp';
+import { useDispatch } from 'react-redux';
+import { toggleMenu } from '../utils/navSlice';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const handleMenuToggle = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
-    <div className="flex justify-between items-center p-2">
+    <div className="flex justify-between items-center p-4">
       <div className="flex items-center">
-        <RxHamburgerMenu className="w-6 h-6" />
-        <div className="w-24 h-5 mx-2">
+        <RxHamburgerMenu
+          className="p-2 cursor-pointer hover:bg-gray-200 hover:rounded-full"
+          size={42}
+          onClick={() => handleMenuToggle()}
+        />
+        <div className="w-24 h-5 mx-4">
           <img src={Logo} alt="Youtube Logo" />
         </div>
       </div>
@@ -19,11 +31,11 @@ const Header = () => {
           className="w-1/2 px-4 py-1 border rounded-l-full"
           placeholder="Search"
         />
-        <button className=" px-5 py-2 border rounded-r-full bg-gray-100">
+        <button className="px-5 py-2 border rounded-r-full bg-gray-100">
           <TfiSearch />
         </button>
       </div>
-      <div>
+      <div className="mr-2">
         <FaUserCircle className="w-8 h-8" />
       </div>
     </div>
