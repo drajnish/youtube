@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import VideoCard from './VideoCard';
 import { API_YOUTUBE_VIDEO } from '../utils/constants';
 
@@ -13,13 +14,14 @@ const VideoContainer = () => {
     const data = await fetch(API_YOUTUBE_VIDEO);
     const json = await data.json();
     setVideos(json.items);
-    console.log(json.items);
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-5">
+    <div className="flex flex-wrap justify-start gap-8 px-2 my-8">
       {videos.map((video) => (
-        <VideoCard info={video} />
+        <Link to={'watch?v=' + video.id} key={video.id}>
+          <VideoCard info={video} />
+        </Link>
       ))}
     </div>
   );

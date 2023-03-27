@@ -1,9 +1,9 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import Logo from '../assets/img/Logo.webp';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { FaUserCircle } from 'react-icons/fa';
 import { TfiSearch } from 'react-icons/tfi';
-import Logo from '../assets/img/Logo.webp';
-import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../utils/navSlice';
 
 const Header = () => {
@@ -22,7 +22,9 @@ const Header = () => {
           onClick={() => handleMenuToggle()}
         />
         <div className="w-24 h-5 mx-4">
-          <img src={Logo} alt="Youtube Logo" />
+          <a href="/">
+            <img src={Logo} alt="Youtube Logo" />
+          </a>
         </div>
       </div>
       <div className="flex basis-3/4 justify-start px-10">

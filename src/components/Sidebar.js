@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   MdHomeFilled,
@@ -29,12 +30,14 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="basis-[12%] mr-4 text-sm">
-      <ul className="pl-2 pb-4 border-b">
-        <li className="flex items-center px-2 py-2 rounded-lg cursor-pointer hover:bg-gray-200">
-          <MdHomeFilled className="mr-2 w-6 h-6" />
-          <span>Home</span>
-        </li>
+    <div className="basis-[18%] text-sm">
+      <ul className="pl-2 pb-4 border-b border-b-black/10">
+        <Link to="/">
+          <li className="flex items-center px-2 py-2 rounded-lg cursor-pointer hover:bg-gray-200">
+            <MdHomeFilled className="mr-2 w-6 h-6" />
+            <span>Home</span>
+          </li>
+        </Link>
         <li className="flex items-center px-2 py-2 rounded-lg cursor-pointer hover:bg-gray-200">
           <BsPlayFill className="mr-2 w-6 h-6" />
           <span>Shorts</span>
