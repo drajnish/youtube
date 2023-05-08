@@ -23,13 +23,14 @@ import {
 import { IoMusicalNoteOutline } from 'react-icons/io5';
 import { GiClapperboard, GiHanger } from 'react-icons/gi';
 import { SiYoutubegaming } from 'react-icons/si';
+import SidebarClose from './SidebarClose';
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.nav.isMenuOpen);
 
-  if (!isMenuOpen) return null;
-
-  return (
+  return !isMenuOpen ? (
+    <SidebarClose />
+  ) : (
     <div className="basis-[18%] text-sm">
       <ul className="pl-2 pb-4 border-b border-b-black/10">
         <Link to="/">

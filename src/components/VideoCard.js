@@ -1,12 +1,8 @@
 import React from 'react';
 
 const VideoCard = ({ info }) => {
-  if (!info) {
-    return <div>Loading...</div>;
-  }
   const { snippet, statistics } = info;
   const { thumbnails, title, channelTitle } = snippet;
-  // console.log(thumbnails);
 
   return (
     <div className="w-80">
